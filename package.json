@@ -4,7 +4,7 @@
   "description": "Backend boilerplate code built using Express.js(Node.js)",
   "main": "app.local.js",
   "scripts": {
-    "devStart": "node app.local.js",
+    "devStart": "nodemon app.local.js",
     "env-setup-dev": "node setup/envToJson.js DEV",
     "env-setup-production": "node setup/envToJson.js PROD",
     "create-dev": "claudia create --config claudia.dev.json --name=__DEV_PROJECT_NAME__ --region __REGION__ --handler lambda.handler --profile=__PROFILE_NAME__ --deploy-proxy-api --role=__ROLE_NAME__ --set-env-from-json app.config.dev.json --version dev",
@@ -43,6 +43,7 @@
   },
   "devDependencies": {
     "claudia": "^5.14.1",
+    "nodemon": "^3.1.3",
     "ntl": "^5.1.0"
   }
 }

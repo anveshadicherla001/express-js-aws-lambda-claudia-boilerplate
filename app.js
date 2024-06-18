@@ -40,6 +40,6 @@ app.get("/", async (req, res) => {
         version: process.env.APP_VER_PREFIX
     });
 });
-app.use(`${process.env.APP_VER_PREFIX}`, routes);
+app.use(`/${process.env.APP_VER_PREFIX}`, routes);
 
 module.exports = app;
