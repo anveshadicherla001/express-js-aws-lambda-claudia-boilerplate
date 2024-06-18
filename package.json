@@ -1,0 +1,48 @@
+{
+  "name": "express-js-aws-lambda-claudia-boilerplate",
+  "version": "1.0.0",
+  "description": "Backend boilerplate code built using Express.js(Node.js)",
+  "main": "app.local.js",
+  "scripts": {
+    "devStart": "node app.local.js",
+    "env-setup-dev": "node setup/envToJson.js DEV",
+    "env-setup-production": "node setup/envToJson.js PROD",
+    "create-dev": "claudia create --config claudia.dev.json --name=__DEV_PROJECT_NAME__ --region __REGION__ --handler lambda.handler --profile=__PROFILE_NAME__ --deploy-proxy-api --role=__ROLE_NAME__ --set-env-from-json app.config.dev.json --version dev",
+    "create-production": "claudia create --config claudia.prod.json --name=__PROD_PROJECT_NAME__ --region __REGION__ --handler lambda.handler --profile=__PROFILE_NAME__ --deploy-proxy-api --role=__ROLE_NAME__ --set-env-from-json app.config.dev.json --version prod",
+    "update-dev": "claudia update --config claudia.dev.json --name=__DEV_PROJECT_NAME__ --profile=__PROFILE_NAME__ --handler lambda.handler --role=__ROLE_NAME__ --set-env-from-json app.config.dev.json --version dev",
+    "update-production": "claudia update --config claudia.prod.json --name=__PROD_PROJECT_NAME__ --profile=__PROFILE_NAME__ --handler lambda.handler --role=__ROLE_NAME__ --set-env-from-json app.config.prod.json --version prod",
+    "generate-proxy": "claudia generate-serverless-express-proxy --express-module app",
+    "start": "ntl"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/anveshadicherla001/express-js-aws-lambda-claudia-boilerplate.git"
+  },
+  "keywords": [
+    "Node.js",
+    "Express.js",
+    "Community",
+    "Backend"
+  ],
+  "author": "Anvesh",
+  "license": "GPL-3.0-only",
+  "bugs": {
+    "url": "https://github.com/anveshadicherla001/express-js-aws-lambda-claudia-boilerplate/issues"
+  },
+  "homepage": "https://github.com/anveshadicherla001/express-js-aws-lambda-claudia-boilerplate#readme",
+  "dependencies": {
+    "ajv": "^8.16.0",
+    "aws-serverless-express": "^3.4.0",
+    "axios": "^1.7.2",
+    "body-parser": "^1.20.2",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "mysql2": "^3.10.0",
+    "util": "^0.12.5"
+  },
+  "devDependencies": {
+    "claudia": "^5.14.1",
+    "ntl": "^5.1.0"
+  }
+}
